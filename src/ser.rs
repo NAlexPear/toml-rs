@@ -1374,52 +1374,52 @@ impl ser::Serializer for StringExtractor {
     type SerializeStruct = ser::Impossible<String, Error>;
     type SerializeStructVariant = ser::Impossible<String, Error>;
 
-    fn serialize_bool(self, _v: bool) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_bool(self, v: bool) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_i8(self, _v: i8) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_i8(self, v: i8) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_i16(self, _v: i16) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_i16(self, v: i16) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_i32(self, _v: i32) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_i32(self, v: i32) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_i64(self, _v: i64) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_i64(self, v: i64) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_u8(self, _v: u8) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_u8(self, v: u8) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_u16(self, _v: u16) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_u16(self, v: u16) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_u32(self, _v: u32) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_u32(self, v: u32) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_u64(self, _v: u64) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_u64(self, v: u64) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_f32(self, _v: f32) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_f32(self, v: f32) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_f64(self, _v: f64) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_f64(self, v: f64) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
-    fn serialize_char(self, _v: char) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+    fn serialize_char(self, v: char) -> Result<String, Self::Error> {
+        Ok(v.to_string())
     }
 
     fn serialize_str(self, value: &str) -> Result<String, Self::Error> {
@@ -1453,9 +1453,9 @@ impl ser::Serializer for StringExtractor {
         self,
         _name: &'static str,
         _variant_index: u32,
-        _variant: &'static str,
+        variant: &'static str,
     ) -> Result<String, Self::Error> {
-        Err(Error::KeyNotString)
+        Ok(variant.to_string())
     }
 
     fn serialize_newtype_struct<T: ?Sized>(
